@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MdSidenavModule } from '@angular/material'
 import { CoreModule } from './core/core.module'
-import {AppRoutingModule } from './app-routing-module'
+import { AppRoutingModule } from './app-routing-module'
 import { LoginModule } from './login/login.module'
 import { ProjectModule } from './project/project.module'
+import { TaskModule } from './task/task.module'
 
 import { AppComponent } from './app.component';
 
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     MdSidenavModule,
     AppRoutingModule,
     LoginModule,
-    ProjectModule
+    ProjectModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core'
 
 const routes: Routes = [
     { path: '',redirectTo: '/login',pathMatch:'full' },
-    { path: 'projcet',redirectTo: '/project',pathMatch:'full' },    
+    { path: 'projcet',redirectTo: '/project',pathMatch:'full' },
+    { path: 'tasklist',redirectTo: '/tasklists',pathMatch:'full' },    
 ];
 
 @NgModule({
