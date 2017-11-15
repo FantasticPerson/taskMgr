@@ -14,6 +14,9 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:true,
+          reminder:new Date(),
+          priority:3,
           owner:{
             id:1,
             name:'张三',
@@ -24,6 +27,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:true,
+          priority:2,
           owner:{
             id:1,
             name:'张三',
@@ -34,6 +39,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:1,
           owner:{
             id:1,
             name:'张三',
@@ -50,6 +57,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:3,
           owner:{
             id:1,
             name:'张三',
@@ -60,6 +69,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:2,
           owner:{
             id:1,
             name:'张三',
@@ -70,6 +81,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:1,
           owner:{
             id:1,
             name:'张三',
@@ -86,6 +99,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:3,
           owner:{
             id:1,
             name:'张三',
@@ -96,6 +111,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:2,
           owner:{
             id:1,
             name:'张三',
@@ -106,6 +123,8 @@ export class TaskHomeComponent implements OnInit {
         {
           id:1,
           desc:'任务一：去星巴克买杯咖啡',
+          completed:false,
+          priority:1,
           owner:{
             id:1,
             name:'张三',
