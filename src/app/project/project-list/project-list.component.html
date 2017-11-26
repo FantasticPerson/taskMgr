@@ -1,7 +1,9 @@
-<app-project-item *ngFor="let item of projects" [item]="item" class="card" (onInvite)="launchInviteDialog()" (onEdit)="launchUpdateDialog()" (onDelete)="launchConfirmDialog()">
+<div class="container" [@listAnim]="projects.length">
+<app-project-item *ngFor="let item of projects" [item]="item" class="card" (onInvite)="launchInviteDialog()" (onEdit)="launchUpdateDialog()" (onDelete)="launchConfirmDialog(item)">
   
 </app-project-item>
 
+</div>
 <button class="fab-button" md-fab type="button" (click)="openNewProjectDialog()">
   <md-icon>add</md-icon>
 </button>

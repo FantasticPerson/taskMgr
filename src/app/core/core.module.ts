@@ -8,17 +8,19 @@ import { MdIconRegistry } from '@angular/material'
 import { DomSanitizer } from '@angular/platform-browser'
 import { loadSvgResources } from '../utils/svg.util'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { AppRoutingModule } from '../app-routing-module'
 import 'hammerjs'
 
 @NgModule({
   imports: [
     HttpModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   exports:[
-    HeaderComponent, FooterComponent, SidebarComponent
+    HeaderComponent, FooterComponent, SidebarComponent,AppRoutingModule,BrowserAnimationsModule
   ]
 })
 export class CoreModule { 
