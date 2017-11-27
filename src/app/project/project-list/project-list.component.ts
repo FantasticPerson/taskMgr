@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,HostBinding } from '@angular/core';
+import { Component, OnInit, Input,HostBinding,ChangeDetectionStrategy,ChangeDetectorRef } from '@angular/core';
 import { MdDialog , MaterialModule } from '@angular/material'
 import { NewProjectComponent } from '../new-project/new-project.component'
 import { InviteComponent } from '../invite/invite.component'
@@ -13,7 +13,8 @@ import { listAnim } from '../../animate/list.anim'
   animations:[
     slideToRight,
     listAnim
-  ]
+  ],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ProjectListComponent implements OnInit {
   @HostBinding('@routeAnim') state;
@@ -32,7 +33,7 @@ export class ProjectListComponent implements OnInit {
       "coverImg":'assets/quate_fullback.jpg'
     },
   ]
-  constructor(private dialog:MdDialog) { }
+  constructor(private dialog:MdDialog,private cd:ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -44,7 +45,9 @@ export class ProjectListComponent implements OnInit {
       console.log(result)
       this.projects = [...this.projects,{id:3,name:'一个新项目',desc:'这是一个新项目',coverImg:'assets/quate_fullback.jpg'},
       {id:3,name:'又一个新项目',desc:'这是又一个新项目',coverImg:'assets/quate_fullback.jpg'}]
+      this.cd.markForCheck()
     })
+    
   }
 
   launchInviteDialog(){
@@ -62,6 +65,7 @@ export class ProjectListComponent implements OnInit {
       this.projects = this.projects.filter(p=>{
         p.id != item.id
       })
+      this.cd.markForCheck()
     })    
   }
 }
