@@ -3,6 +3,8 @@
   'priority-important':item.priority === 2,
   'priority-emergency':item.priority === 1
 }"
+[app-draggable]="true"
+[draggedClass]="'drag-start'"
 [@item]="widerPriority"
 (click)="onItemClick()">
   <md-checkbox class="completion-status" [checked]="item.completed" (click)="onCheckBoxClick($event)"></md-checkbox>

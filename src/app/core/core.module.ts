@@ -10,6 +10,7 @@ import { loadSvgResources } from '../utils/svg.util'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from '../app-routing-module'
 import 'hammerjs'
+import 'rxjs/add/operator/take'
 
 @NgModule({
   imports: [
