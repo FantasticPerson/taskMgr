@@ -175,4 +175,18 @@ export class TaskHomeComponent implements OnInit {
     const dialogRef = this.dialog.open(NewTaskListComponent,{data:{title:'新建列表'}})
     dialogRef.afterClosed().subscribe(result=>{console.log(result)})
   }
+
+  handleMove(srcData,list){
+    switch (srcData.tag){
+      case 'task-item':
+        console.log('handling item')
+        break;
+      case 'task-list':
+        console.log('handling list')
+        break;
+      default:
+        break;
+
+    }
+  }
 }
