@@ -2,13 +2,13 @@
 [@item]="widerPriority"
 [app-draggable]="true"
 [dragTag]="'task-item'"
+[dragData]="item"
 [draggedClass]="'drag-start'"
 [ngClass]="{
   'priority-normal': item.priority === 3,
   'priority-important': item.priority === 2,
-  'priority-emergency': item.priority === 1
-}"
-(click)="onItemClick($event)">
+  'priority-emergency': item.priority === 1}"
+(click)="onItemClicked($event)">
 
   <md-checkbox class="completion-status" [checked]="item.completed" (click)="onCheckBoxClick($event)"></md-checkbox>
   <div md-line class="content" [ngClass]="{'completed':item.completed}">
