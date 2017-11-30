@@ -5,9 +5,10 @@
   [dragEnterClass]="'drag-enter'" 
   [app-draggable]="true"
   [dragTag]="'task-list'"
-  [dragData]="lists"
+  [dragData]="list"
   [draggedClass]="'drag-start'"
-  (dropped)="handleMove($event,lists)">
+  [ngStyle]="{'order':list.order}"
+  (dropped)="handleMove($event,list)">
     <app-task-header [header]="list.name" (newTask)="lunchNewTaskDialog()" (moveAll)="launchCopyTaskDialog()" 
     (delList)="launchConfirmDialog()"
     (onEditList)="lauchEditListDialog()"></app-task-header>
