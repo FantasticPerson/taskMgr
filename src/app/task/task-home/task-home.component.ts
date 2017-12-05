@@ -197,4 +197,8 @@ export class TaskHomeComponent implements OnInit {
 
     }
   }
+
+  handleQuickTask(ev){
+    console.log(ev)
+  }
 }
