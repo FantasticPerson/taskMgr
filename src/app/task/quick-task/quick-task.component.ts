@@ -26,5 +26,4 @@ export class QuickTaskComponent implements OnInit {
     this.quickTask.emit(this.desc)
     this.desc = ""
   }
-
 }
