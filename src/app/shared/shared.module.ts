@@ -71,7 +71,8 @@ import { ImageListSelectComponent } from './image-list-select/image-list-select.
     MdSidenavModule,
     DirectiveModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ImageListSelectComponent
   ],
   entryComponents:[ConfirmDialogComponent],
   declarations: [ConfirmDialogComponent, ImageListSelectComponent]

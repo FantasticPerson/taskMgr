@@ -15,7 +15,7 @@ export class QuickTaskComponent implements OnInit {
 
   onSubmit({value,valid},ev:Event){
     ev.preventDefault();
-    console.log(value,valid)
+    console.log(value,valid) 
   }
 
   @HostListener('keyup.enter')

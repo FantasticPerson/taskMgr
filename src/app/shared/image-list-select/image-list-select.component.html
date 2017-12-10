@@ -6,7 +6,7 @@
   </ng-template>
 </div>
 <div class="scroll-container">
-  <md-grid-list cols="cols"[rowHeight]="rowHeight">
+  <md-grid-list [cols]="cols" [rowHeight]="rowHeight">
     <md-grid-tile *ngFor="let item of items;let i = index">
       <div class="image-container" (click)="onChange(i)">
         <md-icon class="avatar" [svgIcon]="item" *ngIf="useSvgIcon else imgItem"></md-icon>
