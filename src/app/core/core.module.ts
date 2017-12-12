@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser'
 import { loadSvgResources } from '../utils/svg.util'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from '../app-routing-module'
+import {ServicesModule} from '../services/services.module'
 import 'hammerjs'
 import 'rxjs/add/operator/take'
 
@@ -17,7 +18,8 @@ import 'rxjs/add/operator/take'
     HttpModule,
     SharedModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServicesModule.forRoot()
   ],
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   exports:[
