@@ -22,6 +22,11 @@ import 'rxjs/add/operator/take'
   declarations: [HeaderComponent, FooterComponent, SidebarComponent],
   exports:[
     HeaderComponent, FooterComponent, SidebarComponent,AppRoutingModule,BrowserAnimationsModule
+  ],
+  providers:[
+    {provide:'BASE_CONFIG',useValue:{
+      uri:'http://localhost:3000'}
+    }
   ]
 })
 export class CoreModule { 
