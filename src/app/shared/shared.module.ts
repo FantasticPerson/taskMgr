@@ -22,7 +22,8 @@ import {
   MdSidenavModule, } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 import { DirectiveModule } from '../directive/directive.module';
-import { ImageListSelectComponent } from './image-list-select/image-list-select.component'
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
+import { AgeInputComponent } from './age-input/age-input.component'
 
 @NgModule({
   imports: [
@@ -75,7 +76,7 @@ import { ImageListSelectComponent } from './image-list-select/image-list-select.
     ImageListSelectComponent
   ],
   entryComponents:[ConfirmDialogComponent],
-  declarations: [ConfirmDialogComponent, ImageListSelectComponent]
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent]
 })
 export class SharedModule { 
 
