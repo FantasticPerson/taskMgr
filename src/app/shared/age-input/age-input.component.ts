@@ -111,7 +111,8 @@ export class AgeInputComponent implements ControlValueAccessor,OnInit,OnDestroy{
       .filter(_=>this.form.valid);
     this.sub = merged$.subscribe(d=>{
       const age = this.toAge(d.date);
-      if(d.from !== 'birthday'){
+      console.log(age)
+      if(d.from === 'birthday'){
         if(age.age !== ageNum.value){
           ageNum.patchValue(age.age,{emitEvent:false})
         }
@@ -184,7 +185,11 @@ export class AgeInputComponent implements ControlValueAccessor,OnInit,OnDestroy{
 
   writeValue(obj: any): void{
     if(obj){
-      this.form.get('birthday').patchValue(format(obj,this.format))
+      const date = format(obj,this.format)
+      this.form.get('birthday').patchValue(date)
+      const age = this.toAge(date)
+      this.form.get('age').get('ageNum').patchValue(age.age)
+      this.form.get('age').get('ageUnit').patchValue(age.unit)
     }
   }
 
