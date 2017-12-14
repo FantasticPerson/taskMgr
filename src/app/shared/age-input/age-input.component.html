@@ -1,8 +1,10 @@
 <div [formGroup]="form" class="age-input">
   <div>
     <md-input-container>
-      <input type="text" mdInput [mdDatePicker]="birthPicker" formControlName="birthday" placeholder="出生日期">
+      <input mdInput [mdDatepicker]="birthPicker" type="text" placeholder="出生日期" formControlName="birthday" >
       <button mdSuffix [mdDatepickerToggle]="birthPicker" type="button"></button>
+      <!-- <input type="text" mdInput [mdDatePicker]="birthPicker" formControlName="birthday" placeholder="出生日期"> -->
+      <!-- <button mdSuffix [mdDatepickerToggle]="birthPicker" type="button"></button> -->
       <md-error>日期不正确</md-error>
     </md-input-container>
     <md-datepicker touchUi="true" #birthPicker></md-datepicker>
@@ -14,7 +16,7 @@
       </md-input-container>
     </div>
     <div>
-      <md-button-toggle-group formControlName="ageUnit">
+      <md-button-toggle-group formControlName="ageUnit" [(ngModel)]="selectedUnit">
         <md-button-toggle *ngFor="let unit of ageUnits" [value]="unit.value">
           {{unit.label}}
         </md-button-toggle>
