@@ -33,7 +33,19 @@ export interface Age{
 @Component({
   selector: 'app-age-input',
   templateUrl: './age-input.component.html',
-  styleUrls: ['./age-input.component.scss']
+  styleUrls: ['./age-input.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => AgeInputComponent),
+      multi: true,
+    },
+    {
+      provide: NG_VALIDATORS,
+      useExisting: forwardRef(() => AgeInputComponent),
+      multi: true,
+    }
+  ]
 })
 export class AgeInputComponent implements ControlValueAccessor,OnInit,OnDestroy{
   @Input() daysTop = 90;
@@ -66,8 +78,9 @@ export class AgeInputComponent implements ControlValueAccessor,OnInit,OnDestroy{
     })
 
     const birthday = this.form.get('birthday')
-    const ageNum = this.form.get('ageNum')
-    const ageUnit = this.form.get('ageUnit')
+    // debugger
+    const ageNum = this.form.get('age').get('ageNum')
+    const ageUnit = this.form.get('age').get('ageUnit')
 
     const birthday$ = birthday.valueChanges
       .map(d=>{
