@@ -5,6 +5,7 @@ import { InviteComponent } from '../invite/invite.component'
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 import { slideToRight } from '../../animate/router.anim'
 import { listAnim } from '../../animate/list.anim'
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -20,22 +21,12 @@ export class ProjectListComponent implements OnInit {
   @HostBinding('@routeAnim') state;
 
   projects = [
-    {
-      "id":1,
-      "name":'企业协作平台',
-      "desc":'这是一个企业内部项目',
-      "coverImg":'assets/quate_fullback.jpg'
-    },
-    {
-      "id":2,
-      "name":'企业协作平台',
-      "desc":'这是一个企业内部项目',
-      "coverImg":'assets/quate_fullback.jpg'
-    },
+
   ]
-  constructor(private dialog:MdDialog,private cd:ChangeDetectorRef) { }
+  constructor(private dialog:MdDialog,private cd:ChangeDetectorRef,private serive$:ProjectService) { }
 
   ngOnInit() {
+    this.serive$.get('1').subscribe(project => this.projects = project)
   }
 
   openNewProjectDialog(){
