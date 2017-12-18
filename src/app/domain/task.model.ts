@@ -7,7 +7,7 @@ export interface Task{
     reminder?:Date;
     remark?:string;
     creatDate:Date;
-    OwerId?:string;
+    ownerId?:string;
     participantIds:string[];
     taskListId:string;
 }
