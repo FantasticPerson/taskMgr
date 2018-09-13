@@ -1,0 +1,4 @@
+ng new taskmgr -si === ng new taskmgr --skip-install
+ng g m core 新建模块
+
+ng g c core/header --spec=false

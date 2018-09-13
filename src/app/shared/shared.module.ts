@@ -1,87 +1,48 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'
-import { 
-  MdToolbarModule, 
-  MdIconModule, 
-  MdCardModule, 
-  MdButtonModule,
-  MdInputModule,
-  MdListModule,
-  MdSlideToggleModule,
-  MdGridListModule,
-  MdDialogModule,
-  MdAutocompleteModule,
-  MdMenuModule,
-  MdCheckboxModule,
-  MdTooltipModule,
-  MdDatepickerModule,
-  MdRadioModule,
-  MdNativeDateModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdButtonToggleModule, } from '@angular/material';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
-import { DirectiveModule } from '../directive/directive.module';
-import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
-import { AgeInputComponent } from './age-input/age-input.component'
+import {
+  MatToolbarModule,
+  MatSidenavModule,
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatProgressBarModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatTabsModule,
+  MatTooltipModule,
+  MatSlideToggleModule,
+} from '@angular/material'
+
+const MATERIAL_MODULES = [
+  MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
+  MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule,
+  MatDatepickerModule, MatDialogModule, MatGridListModule, MatIconModule,
+  MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule,
+  MatProgressBarModule, MatRadioModule, MatSelectModule, MatTabsModule,
+  MatTooltipModule, MatSlideToggleModule,
+];
 
 @NgModule({
   imports: [
-    CommonModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdButtonModule,
-    MdCardModule,
-    MdInputModule,
-    MdListModule,
-    MdSlideToggleModule,
-    MdGridListModule,
-    MdDialogModule,
-    MdAutocompleteModule,
-    MdMenuModule,
-    MdCheckboxModule,
-    MdTooltipModule,
-    MdDatepickerModule,
-    MdRadioModule,
-    MdNativeDateModule,
-    MdSelectModule,
-    MdSidenavModule,
-    DirectiveModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MdButtonToggleModule
+    ...MATERIAL_MODULES,
+    CommonModule
   ],
-  exports:[
-    CommonModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdButtonModule,
-    MdCardModule,
-    MdInputModule,
-    MdListModule,
-    MdSlideToggleModule,
-    MdGridListModule,
-    MdDialogModule,
-    MdAutocompleteModule,
-    MdMenuModule,
-    MdCheckboxModule,
-    MdTooltipModule,
-    MdDatepickerModule,
-    MdRadioModule,
-    MdNativeDateModule,
-    MdSelectModule,
-    MdSidenavModule,
-    DirectiveModule,
-    FormsModule,
-    ReactiveFormsModule,
-    ImageListSelectComponent,
-    AgeInputComponent,
-    MdButtonToggleModule
+  exports: [
+    ...MATERIAL_MODULES,
+    CommonModule
   ],
-  entryComponents:[ConfirmDialogComponent],
-  declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent]
+  declarations: []
 })
-export class SharedModule { 
-
-}
+export class SharedModule { }
