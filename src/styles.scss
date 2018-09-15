@@ -1,7 +1,10 @@
+@import './theme.scss';
+
 html,
 body,
 app-root,
-.site {
+.site,
+mat-sidenav-container {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -14,4 +17,12 @@ app-root,
 
 main {
     flex: 1
+}
+
+.fill-remaining-space{
+    flex:1 1 auto;
+}
+
+.full-width{
+    width: 100%;
 }

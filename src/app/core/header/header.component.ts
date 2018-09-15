@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatIconRegistry } from '@angular/material'
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @Output() toggle = new EventEmitter<void>()
+  @Output() toggleDarkTheme = new EventEmitter<boolean>()
+
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }
 
+  openSidebar() {
+    this.toggle.emit()
+  }
+
+  onChange(checked:boolean){
+    this.toggleDarkTheme.emit(checked)
+  }
 }
