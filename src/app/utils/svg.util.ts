@@ -6,6 +6,7 @@ export const loadSvgResources = (ir:MatIconRegistry,ds:DomSanitizer) =>{
     const sidebarDir = `${imgDir}/sidebar`
     const dayDir = `${imgDir}/days`
     const avatar = `${imgDir}/avatar`
+    const iconDir = `${imgDir}/icons`
 
     ir.addSvgIcon('gift', ds.bypassSecurityTrustResourceUrl('assets/gifts.svg'))
     ir.addSvgIcon('day', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/day.svg`))
@@ -13,6 +14,9 @@ export const loadSvgResources = (ir:MatIconRegistry,ds:DomSanitizer) =>{
     ir.addSvgIcon('project', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/project.svg`))
     ir.addSvgIcon('projects', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/projects.svg`))
     ir.addSvgIcon('week', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/week.svg`))
+    ir.addSvgIcon('move', ds.bypassSecurityTrustResourceUrl(`${iconDir}/move.svg`))
+    ir.addSvgIcon('add', ds.bypassSecurityTrustResourceUrl(`${iconDir}/add.svg`))
+    ir.addSvgIcon('delete', ds.bypassSecurityTrustResourceUrl(`${iconDir}/delete.svg`))
 
     ir.addSvgIconSetInNamespace('avatars', ds.bypassSecurityTrustResourceUrl(`${avatar}/avatars.svg`))
     
