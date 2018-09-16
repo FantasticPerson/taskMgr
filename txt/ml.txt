@@ -2,3 +2,6 @@ ng new taskmgr -si === ng new taskmgr --skip-install
 ng g m core 新建模块
 
 ng g c core/header --spec=false
+
+ng g c shared/confirm-dialog --inline-template --inline-style --spec=false
+ng g c shared/confirm-dialog -it -is --spec=false

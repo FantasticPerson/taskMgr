@@ -23,7 +23,8 @@ import {
   MatTabsModule,
   MatTooltipModule,
   MatSlideToggleModule,
-} from '@angular/material'
+} from '@angular/material';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -43,6 +44,9 @@ const MATERIAL_MODULES = [
     ...MATERIAL_MODULES,
     CommonModule
   ],
-  declarations: []
+  entryComponents:[
+    ConfirmDialogComponent
+  ],
+  declarations: [ConfirmDialogComponent]
 })
 export class SharedModule { }

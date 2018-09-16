@@ -8,11 +8,12 @@ import { OverlayContainer } from '@angular/cdk/overlay';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
-
-  constructor(@Inject(MAT_DIALOG_DATA) private date,private dialogRef:MatDialogRef<NewProjectComponent>,private oc:OverlayContainer) { }
+title:string=""
+  constructor(@Inject(MAT_DIALOG_DATA) private data,private dialogRef:MatDialogRef<NewProjectComponent>,private oc:OverlayContainer) { }
 
   ngOnInit() {
-    console.log(JSON.stringify(this.date))
+    console.log(JSON.stringify(this.data))
+    this.title = this.data.title
   }
 
   onClose(){

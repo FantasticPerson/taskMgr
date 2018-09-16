@@ -9,6 +9,7 @@ export const loadSvgResources = (ir:MatIconRegistry,ds:DomSanitizer) =>{
     const iconDir = `${imgDir}/icons`
 
     ir.addSvgIcon('gift', ds.bypassSecurityTrustResourceUrl('assets/gifts.svg'))
+    ir.addSvgIcon('unassigned', ds.bypassSecurityTrustResourceUrl(`${avatar}/unassigned.svg`))
     ir.addSvgIcon('day', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/day.svg`))
     ir.addSvgIcon('month', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/month.svg`))
     ir.addSvgIcon('project', ds.bypassSecurityTrustResourceUrl(`${sidebarDir}/project.svg`))
