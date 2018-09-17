@@ -1,12 +1,13 @@
 <mat-sidenav-container [class.myapp-dark-theme]="darkTheme">
   <mat-sidenav #sidenav>
-    <app-sidebar></app-sidebar>
+    <app-sidebar (navClick)="sidenav.toggle()"></app-sidebar>
   </mat-sidenav>
   <div class="site">
     <header>
       <app-header (toggle)="sidenav.toggle()" (toggleDarkTheme)="swtichTheme($event)"></app-header>
     </header>
     <main>
+      <!-- <div class="square" [@square]="squareState" (click)="onClick()"></div> -->
       <router-outlet></router-outlet>
     </main>
     <footer>
