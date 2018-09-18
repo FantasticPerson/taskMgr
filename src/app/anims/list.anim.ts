@@ -11,5 +11,4 @@ export const listAnimation = trigger('listAnim', [
             animate('1s', style({ opacity: 0 }))
         ]), { optional: true })
     ]),
-
 ])

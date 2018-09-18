@@ -4,6 +4,10 @@
     'priority-important':item.priority === 2,
     'priority-emergency':item.priority === 1
   }"
+  [app-draggable]="true"
+  [draggedClass]="'drag-start'"
+  [dragData]="item"
+  [dragTag]="'task-item'"
   (click)="onEditClick()"
 >
   <mat-checkbox (click)="onCheckboxClick($event)" class="completion-status" [checked]="item.completed">

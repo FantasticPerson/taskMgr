@@ -25,6 +25,7 @@ import {
   MatSlideToggleModule,
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
+import {DirectiveModule} from '../directive/directive.module'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -38,11 +39,13 @@ const MATERIAL_MODULES = [
 @NgModule({
   imports: [
     ...MATERIAL_MODULES,
-    CommonModule
+    CommonModule,
+    DirectiveModule
   ],
   exports: [
     ...MATERIAL_MODULES,
-    CommonModule
+    CommonModule,
+    DirectiveModule
   ],
   entryComponents:[
     ConfirmDialogComponent
