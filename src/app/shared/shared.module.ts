@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import {
   MatToolbarModule,
   MatSidenavModule,
@@ -25,7 +26,7 @@ import {
   MatSlideToggleModule,
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
-import {DirectiveModule} from '../directive/directive.module'
+import { DirectiveModule } from '../directive/directive.module'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -40,14 +41,16 @@ const MATERIAL_MODULES = [
   imports: [
     ...MATERIAL_MODULES,
     CommonModule,
-    DirectiveModule
+    DirectiveModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [
     ...MATERIAL_MODULES,
     CommonModule,
-    DirectiveModule
+    DirectiveModule,
+    FormsModule, ReactiveFormsModule
   ],
-  entryComponents:[
+  entryComponents: [
     ConfirmDialogComponent
   ],
   declarations: [ConfirmDialogComponent]

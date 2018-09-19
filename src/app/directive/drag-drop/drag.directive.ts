@@ -31,6 +31,7 @@ export class DragDirective {
     console.log('dragStart')
     if (this.el.nativeElement === ev.target) {
       this.rd.addClass(this.el.nativeElement, this.draggedClass)
+      console.log(this.dragData)
       this.service.setDragData({tag:this.dragTag,data:this.dragData})
     }
   }

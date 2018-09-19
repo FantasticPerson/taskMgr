@@ -64,11 +64,8 @@ export class DropDirective {
     ev.preventDefault()
     ev.stopPropagation()
     if (this.el.nativeElement === ev.target) {
-      debugger
       this.data$.subscribe(dragData => {
-        
         if (this.dropTags.indexOf(dragData.tag) > -1) {
-
           this.rd.removeClass(this.el.nativeElement, this.dragEnterClass)
           this.dropped.emit(dragData)
           this.service.clearDragData()

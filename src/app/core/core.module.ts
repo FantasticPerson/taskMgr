@@ -7,8 +7,9 @@ import { DomSanitizer } from '@angular/platform-browser'
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component'
-import {loadSvgResources} from '../utils/svg.util'
-import {AppRoutingModule} from '../app.routing.module'
+import { loadSvgResources } from '../utils/svg.util'
+import { AppRoutingModule } from '../app.routing.module'
+import { ServivesModule } from '../servives/servives.module'
 import 'hammerjs'
 
 @NgModule({
@@ -16,6 +17,7 @@ import 'hammerjs'
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ServivesModule.forRoot(),
     AppRoutingModule
   ],
   declarations: [
@@ -29,15 +31,15 @@ import 'hammerjs'
     SidebarComponent,
     AppRoutingModule
   ],
-  providers:[
-    {provide:"BASE_CONFIG",useValue:'http://localhost:3000'}
+  providers: [
+    { provide: "BASE_CONFIG", useValue: 'http://localhost:3000' }
   ]
 })
 export class CoreModule {
-  constructor(@Optional() @SkipSelf() parent: CoreModule,ir:MatIconRegistry,ds:DomSanitizer) {
+  constructor(@Optional() @SkipSelf() parent: CoreModule, ir: MatIconRegistry, ds: DomSanitizer) {
     if (parent) {
       return new Error('模块已经存在，不能再次加载')
     }
-    loadSvgResources(ir,ds)
+    loadSvgResources(ir, ds)
   }
 }

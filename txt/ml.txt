@@ -5,3 +5,12 @@ ng g c core/header --spec=false
 
 ng g c shared/confirm-dialog --inline-template --inline-style --spec=false
 ng g c shared/confirm-dialog -it -is --spec=false
+
+*是语法糖 *ngIf == <ng-template [ngIf]=""></ng-template>
+
+forRoot     ====>   
+forChild
+
+[class.completed]="item.completed" [ngClass]="{'completed':item.completed}"
+
+<form> ===> <form ngForm>

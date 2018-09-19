@@ -8,9 +8,11 @@
     [dragTag]="'task-list'" 
     [app-draggable]="true" 
     [draggedClass]="'drag-start'" 
-    [dragData]="taskList"
+    [dragData]="list"
+    [ngStyle]="{'order':list.order}"
     class="list-container" 
   >
+  <app-quick-task (quickTask)="handleQuickTask($event)"></app-quick-task>
     <app-task-header [header]="list.name" (newTask)="launchNewTaskDialog()" (moveAll)="launchCopyTaskDialog()" (delList)="launchConfirmDialog()" (onEditList)="launchEditListDialog()"></app-task-header>
     <app-task-item *ngFor="let task of list.tasks" [item]="task" (taskClick)="launchUpdateTaskDialog(task)"></app-task-item>
   </app-task-list>

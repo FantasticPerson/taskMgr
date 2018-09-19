@@ -18,6 +18,7 @@ export class TaskHomeComponent implements OnInit {
   @HostBinding('@routerAnim') state
   lists = [
     {
+      order:1,
       id: 1,
       name: '待办',
       tasks: [
@@ -72,6 +73,7 @@ export class TaskHomeComponent implements OnInit {
       ]
     },
     {
+      order:2,
       id: 1,
       name: '待办',
       tasks: [
@@ -126,6 +128,7 @@ export class TaskHomeComponent implements OnInit {
       ]
     },
     {
+      order:3,
       id: 1,
       name: '待办',
       tasks: [
@@ -215,9 +218,17 @@ export class TaskHomeComponent implements OnInit {
         break;
       case 'task-list':
         console.log('list')
+        const srcList = srcData.data;
+        const tempOrder = srcList.order
+        srcList.order = list.order
+        list.order = tempOrder
         break;
       default:
         break
     }
+  }
+
+  handleQuickTask(desc:string){
+    console.log(desc)
   }
 }
