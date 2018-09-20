@@ -26,7 +26,8 @@ import {
   MatSlideToggleModule,
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
-import { DirectiveModule } from '../directive/directive.module'
+import { DirectiveModule } from '../directive/directive.module';
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -48,11 +49,12 @@ const MATERIAL_MODULES = [
     ...MATERIAL_MODULES,
     CommonModule,
     DirectiveModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    ImageListSelectComponent
   ],
   entryComponents: [
     ConfirmDialogComponent
   ],
-  declarations: [ConfirmDialogComponent]
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent]
 })
 export class SharedModule { }
