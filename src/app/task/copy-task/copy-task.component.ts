@@ -16,4 +16,8 @@ export class CopyTaskComponent implements OnInit {
     this.lists = this.data.lists
   }
 
+  onClose(){
+    
+  }
+
 }

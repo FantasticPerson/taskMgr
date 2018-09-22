@@ -36,4 +36,8 @@ export class InviteComponent implements OnInit {
   displayUser(user:{id:any,name:string}) {
     return user ? user.name : ''
   }
+
+  onClose(){
+    
+  }
 }

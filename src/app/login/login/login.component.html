@@ -28,12 +28,12 @@
     <mat-card-header>
       <mat-card-title> 佳句</mat-card-title>
       <mat-card-subtitle>
-        sdfssdfdsfdsfdsfsdfsdfdsfdsfdsf
+        {{quote.cn}}
       </mat-card-subtitle>
     </mat-card-header>
-    <img matCardImage src="assets/quote_fallback.jpg">
+    <img matCardImage [src]="quote.pic" alt="quote img">
     <mat-card-content>
-      sdfsdfdsfdsfdsfdsfdsfsdfdsfdsfdsf
+      {{quote.en}}
     </mat-card-content>
   </mat-card>
 </form>
