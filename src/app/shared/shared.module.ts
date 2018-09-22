@@ -27,7 +27,8 @@ import {
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 import { DirectiveModule } from '../directive/directive.module';
-import { ImageListSelectComponent } from './image-list-select/image-list-select.component'
+import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
+import { AgeInputComponent } from './age-input/age-input.component'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -55,6 +56,6 @@ const MATERIAL_MODULES = [
   entryComponents: [
     ConfirmDialogComponent
   ],
-  declarations: [ConfirmDialogComponent, ImageListSelectComponent]
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent]
 })
 export class SharedModule { }
