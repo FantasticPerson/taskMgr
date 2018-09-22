@@ -51,7 +51,8 @@ const MATERIAL_MODULES = [
     CommonModule,
     DirectiveModule,
     FormsModule, ReactiveFormsModule,
-    ImageListSelectComponent
+    ImageListSelectComponent,
+    AgeInputComponent
   ],
   entryComponents: [
     ConfirmDialogComponent
