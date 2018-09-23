@@ -47,5 +47,9 @@ mat-icon.avatar{
     cursor: pointer;
 }
 
+img{
+    display: block;
+}
+
 
 

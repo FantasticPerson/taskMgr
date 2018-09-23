@@ -24,10 +24,12 @@ export class ImageListSelectComponent implements ControlValueAccessor {
   @Input() rowHeight = '64px'
   @Input() items: string[] = []
   @Input() useSvgIcon: boolean = false
-  @Input() itemWidth = '80px'
+  @Input() itemWidth:string = 80
   selected: string
 
-  constructor() { }
+  constructor() { 
+    console.log(this.itemWidth)
+  }
 
   private propagationChange = (_: any) => { }
   onChange(i) {

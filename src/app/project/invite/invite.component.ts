@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-invite',
@@ -6,38 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invite.component.css']
 })
 export class InviteComponent implements OnInit {
-  items = [
-    {
-      id: 1,
-      name: 'zhangsan'
-    },
-    {
-      id: 2,
-      name: 'lisi'
-    },
-    {
-      id: 3,
-      name: 'wangwu'
-    },
-    {
-      id: 4,
-      name: 'zhaoliu'
-    },
-    {
-      id: 6,
-      name: 'zhangsan'
-    },
-  ]
-  constructor() { }
+  @Input() label
+  members: User[] = []
+  constructor(@Inject(MAT_DIALOG_DATA) private data, private dialogRef: MatDialogRef<InviteComponent>) { }
 
   ngOnInit() {
+    this.members = [...this.data.members]
   }
 
-  displayUser(user:{id:any,name:string}) {
-    return user ? user.name : ''
-  }
-
-  onClose(){
-    
+  onSubmit(ev: Event, { valid, value }) {
+    ev.preventDefault()
+    if (!valid) {
+      return;
+    }
+    this.dialogRef.close(this.members)
   }
 }

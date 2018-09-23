@@ -199,13 +199,50 @@ const area = document.getElementById('area')
 
 // const first$ = rxjs.from([1,2,3,4]).pipe(rxjs.operators.startWith(0)) //一般用来赋初始值
 
-const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
-const width$ = rxjs.fromEvent(width,'keyup').pipe(rxjs.operators.pluck('target','value'))
+// const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
+// const width$ = rxjs.fromEvent(width,'keyup').pipe(rxjs.operators.pluck('target','value'))
 
-const area$ = rxjs.combineLatest(length$,width$,(l,w)=>{return l*w})
-area$.subscribe(val=>{
+// const area$ = rxjs.combineLatest(length$,width$,(l,w)=>{return l*w})
+// area$.subscribe(val=>{
+//     console.log(val)
+// })
+
+// const merge$=length$.pipe(rxjs.operators.withLatestFrom(width$)) //第一个流改变是 才可能有输出
+// merge$.subscribe(val=>console.log(val))
+
+
+// const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
+// .pipe(rxjs.operators.map(_=>{
+//     return rxjs.interval(100)
+// }))
+
+// length$.subscribe(val=>{
+//     val.subscribe(v=>console.log(v))
+//     // console.log(val)
+// })
+
+
+// flatMap == mergeMap
+// const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
+// .pipe(rxjs.operators.flatMap(_=>{
+//     return rxjs.interval(100)
+// }))
+
+// length$.subscribe(val=>{
+//     // val.subscribe(v=>console.log(v))
+//     console.log(val)
+// })
+
+
+//switchMap
+const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
+.pipe(rxjs.operators.switchMap(_=>{
+    return rxjs.interval(1000)
+}))
+
+length$.subscribe(val=>{
+    // val.subscribe(v=>console.log(v))
     console.log(val)
 })
 
-const merge$=length$.pipe(rxjs.operators.withLatestFrom(width$)) //第一个流改变是 才可能有输出
-merge$.subscribe(val=>console.log(val))
+// mergeMap 保留所有的流  switchMap一旦有新的元素进来  会抛弃之前的元素

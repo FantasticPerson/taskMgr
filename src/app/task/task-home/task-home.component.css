@@ -19,6 +19,8 @@
     overflow-y: auto;
     overflow-x: hidden;
     border: 1px solid #ccc;
+    margin: 0 5px;
+    margin-top: 2px;
 }
 
 .drag-enter{

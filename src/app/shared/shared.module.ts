@@ -28,7 +28,8 @@ import {
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component'
 import { DirectiveModule } from '../directive/directive.module';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
-import { AgeInputComponent } from './age-input/age-input.component'
+import { AgeInputComponent } from './age-input/age-input.component';
+import { ChipsListComponent } from './chips-list/chips-list.component'
 
 const MATERIAL_MODULES = [
   MatToolbarModule, MatSidenavModule, MatAutocompleteModule, MatButtonModule,
@@ -52,11 +53,12 @@ const MATERIAL_MODULES = [
     DirectiveModule,
     FormsModule, ReactiveFormsModule,
     ImageListSelectComponent,
-    AgeInputComponent
+    AgeInputComponent,
+    ChipsListComponent
   ],
   entryComponents: [
     ConfirmDialogComponent
   ],
-  declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent]
+  declarations: [ConfirmDialogComponent, ImageListSelectComponent, AgeInputComponent, ChipsListComponent]
 })
 export class SharedModule { }

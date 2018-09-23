@@ -1,4 +1,21 @@
 // Login
+
+GET http://localhost:3000/projects?members_like=2
+
+###
+
+GET http://localhost:3000/taskLists
+###
+POST   http://localhost:3000/taskLists/
+Content-Type: application/json;charset: utf-8
+
+{
+	"name":"list1",
+	"order":1,
+	"projectId":"1"
+}
+
+###
 POST http://localhost:3000/auth
 Content-Type: application/json;charset: utf-8
 
