@@ -1,4 +1,8 @@
-@import '~@angular/material/_theming.scss';
+@import '~@angular/material/theming';
+// 引入其他依赖
+
+// 此处将公用的 Material 风格包含在此处是为了达成整个应用使用一个单一 css
+// 所以请确保只在此处包含一次即可，其他地方不要再包含了。
 @include mat-core();
 
 $mat-tcpalette: (
@@ -143,4 +147,3 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 // @include mat-typography(
 //
 // );
-

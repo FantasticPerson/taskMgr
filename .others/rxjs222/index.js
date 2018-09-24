@@ -1,8 +1,8 @@
 const height = document.getElementById('height')
-const height$ = rxjs.fromEvent(height,'keyup')
+const height$ = rxjs.fromEvent(height, 'keyup')
 
-height$.subscribe(val=>{
-    console.log(val.target.value + ' '+new Date())
+height$.subscribe(val => {
+    console.log(val.target.value + ' ' + new Date())
 })
 
 const length = document.getElementById('length')
@@ -235,14 +235,136 @@ const area = document.getElementById('area')
 
 
 //switchMap
-const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
-.pipe(rxjs.operators.switchMap(_=>{
-    return rxjs.interval(1000)
-}))
+// const length$ = rxjs.fromEvent(length,'keyup').pipe(rxjs.operators.pluck('target','value'))
+// .pipe(rxjs.operators.switchMap(_=>{
+//     return rxjs.interval(1000)
+// }))
 
-length$.subscribe(val=>{
-    // val.subscribe(v=>console.log(v))
-    console.log(val)
-})
+// length$.subscribe(val=>{
+//     // val.subscribe(v=>console.log(v))
+//     console.log(val)
+// })
 
 // mergeMap 保留所有的流  switchMap一旦有新的元素进来  会抛弃之前的元素
+
+//share 热   相当于 直播
+// const count$ = rxjs.interval(1000)
+// const sub1 = count$.subscribe(val=>{
+//     console.log(val)
+// })
+
+// setTimeout(function(){
+//     count$.subscribe(val=>{
+//         console.log(val)
+//     })
+// },2000)
+
+// const count$ = rxjs.interval(1000).pipe(rxjs.operators.share())
+// const sub1 = count$.subscribe(val=>{
+//     console.log(val)
+// })
+
+// setTimeout(function(){
+//     count$.subscribe(val=>{
+//         console.log(val)
+//     })
+// },2000)
+
+// const counters$ = rxjs.interval(1000).pipe(rxjs.operators.take(5))
+// const subject = new rxjs.Subject()
+
+// const observal1 = {
+//     next: (val) => console.log('1: ' + val),
+//     error: (err) => console.error('ERROR>> 1:' + err),
+//     complete: () => console.log('1 is complete')
+// }
+
+// const observal2 = {
+//     next: (val) => console.log('2: ' + val),
+//     error: (err) => console.error('ERROR>> 2:' + err),
+//     complete: () => console.log('2 is complete')
+// }
+
+// counters$.subscribe(observal1)
+
+// setTimeout(function () {
+//     counters$.subscribe(observal2)
+// }, 2000)
+
+// const counters$ = rxjs.interval(1000).pipe(rxjs.operators.take(5))
+// const subject = new rxjs.Subject()
+
+// const observal1 = {
+//     next: (val) => console.log('1: ' + val),
+//     error: (err) => console.error('ERROR>> 1:' + err),
+//     complete: () => console.log('1 is complete')
+// }
+
+// const observal2 = {
+//     next: (val) => console.log('2: ' + val),
+//     error: (err) => console.error('ERROR>> 2:' + err),
+//     complete: () => console.log('2 is complete')
+// }
+
+// subject.subscribe(observal1)
+
+
+// setTimeout(function () {
+//     subject.subscribe(observal2)
+// }, 2000)
+
+// counters$.subscribe(subject)
+
+// const counters$ = rxjs.interval(1000).pipe(rxjs.operators.take(5))
+// const subject = new rxjs.Subject()
+
+// const observal1 = {
+//     next: (val) => console.log('1: ' + val),
+//     error: (err) => console.error('ERROR>> 1:' + err),
+//     complete: () => console.log('1 is complete')
+// }
+
+// const observal2 = {
+//     next: (val) => console.log('2: ' + val),
+//     error: (err) => console.error('ERROR>> 2:' + err),
+//     complete: () => console.log('2 is complete')
+// }
+
+// subject.subscribe(observal1)
+// subject.next(10)
+// subject.next(11)
+
+
+// setTimeout(function () {
+//     subject.subscribe(observal2)
+// }, 2000)
+
+// counters$.subscribe(subject)
+
+const counters$ = rxjs.interval(1000).pipe(rxjs.operators.take(5))
+// const subject = new rxjs.ReplaySubject() //保留之前的值
+const subject = new rxjs.BehaviorSubject()//保留之前的一个值
+
+const observal1 = {
+    next: (val) => console.log('1: ' + val),
+    error: (err) => console.error('ERROR>> 1:' + err),
+    complete: () => console.log('1 is complete')
+}
+
+const observal2 = {
+    next: (val) => console.log('2: ' + val),
+    error: (err) => console.error('ERROR>> 2:' + err),
+    complete: () => console.log('2 is complete')
+}
+
+subject.subscribe(observal1)
+subject.next(10)
+subject.next(11)
+
+
+setTimeout(function () {
+    subject.subscribe(observal2)
+}, 2000)
+
+counters$.subscribe(subject)
+

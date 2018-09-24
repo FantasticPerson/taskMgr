@@ -1,28 +1,32 @@
-@import './theme.scss';
+@import 'theme.scss';
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
 
 html,
 body,
 app-root,
-.site,
 mat-sidenav-container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .site {
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  min-height: 100%;
 }
 
-main {
-    flex: 1
+.full-width {
+  width: 100%;
 }
 
-.fill-remaining-space{
-    flex:1 1 auto;
-}
-
-.full-width{
-    width: 100%;
+.fill-remaining-space {
+  // 使用 flexbox 填充剩余空间
+  // @angular/material 中的很多控件使用了 flex 布局
+  flex: 1 1 auto;
 }

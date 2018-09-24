@@ -2,8 +2,10 @@
 
 # compiled output
 /dist
+/dist-server
 /tmp
 /out-tsc
+/out
 
 # dependencies
 /node_modules
@@ -29,13 +31,18 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
+*.log
+*.log*
 /typings
+/.esm-cache
+
+# e2e
+/e2e/*.js
+/e2e/*.map
 
 # System Files
 .DS_Store
 Thumbs.db
 
-/coding-123
+# generated docs
+/doc
