@@ -1,14 +1,14 @@
-import {MatDateFormats} from '@angular/material';
+import { MatDateFormats } from '@angular/material';
 
 
 export const MD_FNS_DATE_FORMATS: MatDateFormats = {
   parse: {
-    dateInput: null,
+    dateInput: 'LL',
   },
   display: {
-    dateInput: {year: 'numeric', month: 'numeric', day: 'numeric'},
-    monthYearLabel: {year: 'numeric', month: 'short'},
-    dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
-    monthYearA11yLabel: {year: 'numeric', month: 'long'},
-  }
+    dateInput: 'LL',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
 };

@@ -120,7 +120,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       ],
       repeat: ['', Validators.required],
       avatar: [img],
-      dateOfBirth: [''],
+      dateOfBirth: ['1991-10-10'],
       address: ['', Validators.maxLength(80)],
       identity: []
     });
